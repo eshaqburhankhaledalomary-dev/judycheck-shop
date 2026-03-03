@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ku">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>جودی چەیک شۆپ</title>
+  <style>
+    body {font-family: Arial; background:#f3fdf5; margin:0;}
+    header {background:#2e7d32; color:white; padding:15px; text-align:center; font-size:22px;}
+    .container {padding:20px;}
+    input, button {padding:10px; margin:5px 0; width:100%;}
+    button {background:#2e7d32; color:white; border:none;}
+    table {width:100%; margin-top:20px; border-collapse:collapse;}
+    th, td {border:1px solid #ddd; padding:8px; text-align:center;}
+    th {background:#4caf50; color:white;}
+  </style>
+</head>
+<body>
+
+<header>نوسینگەی جودی ژمارە 28 - جودی چەیک</header>
+
+<div class="container">
+  <h3>زیادکردنی کرین</h3>
+  <input type="text" id="item" placeholder="جۆر" />
+  <input type="number" id="qty" placeholder="بڕ" />
+  <input type="number" id="price" placeholder="نرخ" />
+  <button onclick="addPurchase()">زیاد بکە</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>جۆر</th>
+        <th>بڕ</th>
+        <th>نرخ</th>
+        <th>کۆی گشتی</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+</div>
+
+<script>
+function addPurchase(){
+  const item=document.getElementById("item").value;
+  const qty=document.getElementById("qty").value;
+  const price=document.getElementById("price").value;
+  const total=qty*price;
+  const table=document.getElementById("tableBody");
+  const row=table.insertRow();
+  row.insertCell(0).innerText=item;
+  row.insertCell(1).innerText=qty;
+  row.insertCell(2).innerText=price;
+  row.insertCell(3).innerText=total;
+}
+</script>
+
+</body>
+</html>
